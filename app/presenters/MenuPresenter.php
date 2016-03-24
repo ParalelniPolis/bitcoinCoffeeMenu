@@ -21,4 +21,8 @@ class MenuPresenter extends BasePresenter
 		$this->template->menu = $this->menuManager->getAllMenuItems();
 	}
 
+	public function handleRedraw()
+	{
+		$this->redrawControl('menu');
+	}
 }

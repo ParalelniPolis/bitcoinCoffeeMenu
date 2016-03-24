@@ -9,6 +9,7 @@ use Ramsey\Uuid\Uuid;
 
 /**
  * @ORM\Entity
+ * @ORM\Table(name="bitcoin_coffee_menu_item")
  */
 class MenuItem extends Entities\BaseEntity
 {

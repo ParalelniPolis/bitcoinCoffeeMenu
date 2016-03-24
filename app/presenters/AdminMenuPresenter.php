@@ -69,10 +69,10 @@ class AdminMenuPresenter extends BasePresenter
 	public function createComponentEditItem()
 	{
 		$form = new Form();
-		$form->addText('name', 'Název: ')
+		$form->addText('name', 'Název')
 			->setRequired('Musíte zadat název.');
-		$form->addText('priceCZ', 'cena v CZK')
-			->setRequired('Musíte zadat cenu v CZK');
+		$form->addText('priceCZ', 'cena v CZ')
+			->setRequired('Musíte zadat cenu v CZ');
 		$form->addHidden('id', $this->editId);
 		$form->addSubmit('submit', 'Uložit');
 		$form->addSubmit('cancel', 'Zrušit');
