@@ -1,0 +1,8 @@
+.search {
+  width: 300px;
+}
+.search button img,
+.search button svg {
+  width: 14px;
+  height: 14px;
+}

@@ -1,0 +1,58 @@
+{block content}
+	{snippet menu}
+		<div class="menu">
+			{foreach $menu as $item}
+				<div class="row">
+				{if $editId != $item->getId()}
+					<span class="col-md-3">
+						{$item->getName()}
+					</span>
+					<span class="col-md-2">
+						{$item->getPriceCZ()|number} CZK
+					</span>
+					<span class="col-md-2">
+						{$item->getPriceBitcoin()*1000|number:2} mBTC
+					</span>
+					<span class="col-md-1">
+						<a class="btn btn-info" n:href="edit!, id => $item->getId()">Editovat</a>
+					</span>
+					<span class="col-md-1">
+						<a class="btn btn-danger" n:href="delete!, id => $item->getId()">Smazat</a>
+					</span>
+					<span class="col-md-1" style="font-size: 15px; height: 46px">
+						{if !$iterator->isFirst()}
+							<a n:href="moveUp!, id => $item->getId()">
+								<span class="glyphicon glyphicon-chevron-up"></span>
+							</a>
+						{/if}
+						{if !$iterator->isLast()}
+							<a n:href="moveDown!, id => $item->getId()">
+								<span class="glyphicon glyphicon-chevron-down" style="top: 15px; {if !$iterator->isFirst()}left: -19px;{/if}"></span>
+							</a>
+						{/if}
+					</span>
+				{else}
+					<form n:name="editItem">
+						<span class="col-md-3">
+							<input class="form-control" n:name="name">
+						</span>
+						<span class="col-md-3">
+							<input class="form-control" n:name="priceCZ"> CZK
+						</span>
+						<span class="col-md-3">
+							{$item->getPriceBitcoin()*1000|number:2} mBTC
+						</span>
+						<span class="col-md-1">
+							<input class="btn btn-success" n:name="submit">
+						</span>
+						<span class="col-md-1">
+							<input class="btn btn-info" n:name="cancel">
+						</span>
+					</form>
+				{/if}
+				</div>
+			{/foreach}
+		</div>
+	{/snippet}
+	{control addItem}
+{/block}

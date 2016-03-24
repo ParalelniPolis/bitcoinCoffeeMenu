@@ -1,0 +1,36 @@
+#
+# WARNING: it is CRITICAL that this file & directory are NOT accessible directly via a web browser!
+# https://nette.org/security-warning
+#
+parameters:
+
+php:
+	date.timezone: Europe/Prague
+
+
+application:
+	errorPresenter: Error
+	mapping:
+		*: App\Presenters\*Presenter
+
+
+session:
+	expiration: 14 days
+	autoStart: yes
+
+services:
+	- App\Forms\FormFactory
+	- App\Model\MenuManager
+	- App\Model\BitcoinPriceCalculator
+	router: App\RouterFactory::createRouter
+	- {class: App\Presenters\AdminMenuPresenter, setup: {setSuperSecretParameter(%superSecretParameter%)}}
+
+extensions:
+	console: Kdyby\Console\DI\ConsoleExtension
+	events: Kdyby\Events\DI\EventsExtension
+	annotations: Kdyby\Annotations\DI\AnnotationsExtension
+	doctrine: Kdyby\Doctrine\DI\OrmExtension
+
+doctrine:
+	types:
+		uuid: Ramsey\Uuid\Doctrine\UuidType

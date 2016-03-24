@@ -1,0 +1,19 @@
+{block content}
+	{snippet menu}
+		<div class="menu">
+			{foreach $menu as $item}
+				<div class="row">
+					<span class="col-md-4">
+						{$item->getName()}
+					</span>
+					<span class="col-md-4">
+						{$item->getPriceCZ()|number} CZK
+					</span>
+					<span class="col-md-4">
+						{$item->getPriceBitcoin()*1000|number:2} mBTC
+					</span>
+				</div>
+			{/foreach}
+		</div>
+	{/snippet}
+{/block}

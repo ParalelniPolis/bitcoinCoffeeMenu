@@ -1,0 +1,52 @@
+{**
+ * @param string   $basePath web base path
+ * @param array    $flashes  flash messages
+ *}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>{ifset title}{include title|striptags} | {/ifset}Nette Sandbox</title>
+
+	{*dočasně, během vývoje, abych nemusel minifikovat css a kompilovat bootstrap*}
+	<link rel="stylesheet" href="{$basePath}/css/bootstrap.css">
+	<link rel="stylesheet" href="{$basePath}/css/layout.css">
+	<link rel="stylesheet" href="{$basePath}/css/fileinput.css">
+	<link rel="stylesheet" href="{$basePath}/css/admin.css">
+	<meta name="viewport" content="width=device-width">
+	{block head}{/block}
+	<style>
+		*, body {
+			font-family: Helvetica, serif;
+			background-color: black;
+			color: white;
+		}
+		.menu {
+			font-size: 40px;
+		}
+	</style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+			<div n:foreach="$flashes as $flash">
+				<div class="alert alert-dismissible alert-{$flash->type}">
+				<button type="button" class="close" data-dismiss="alert">&times;</button>
+				{$flash->message}
+				</div>
+			</div>
+    	</div>
+		{include content}
+
+
+	{block scripts}
+		<script rel="stylesheet" href="{$basePath}/js/nette.ajax.js"></script>
+		<script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+		<script src="https://nette.github.io/resources/js/netteForms.min.js"></script>
+    	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+		<script rel="stylesheet" href="{$basePath}/js/main.js"></script>
+	{/block}
+</body>
+</html>
