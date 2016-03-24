@@ -1,4 +1,10 @@
 {block content}
+	<style>
+		.menu {
+			font-size: 40px;
+		}
+	</style>
+
 	{snippet menu}
 		<div class="menu">
 			{foreach $menu as $item}
@@ -7,10 +13,10 @@
 					<span class="col-md-3">
 						{$item->getName()}
 					</span>
-					<span class="col-md-2">
+					<span class="col-md-3">
 						{$item->getPriceCZ()|number:0:'.':' '} CZK
 					</span>
-					<span class="col-md-2">
+					<span class="col-md-3">
 						{$item->getPriceBitcoin()*1000|number:2:'.':' '} mBTC
 					</span>
 					<span class="col-md-1">
@@ -19,7 +25,7 @@
 					<span class="col-md-1">
 						<a class="btn btn-danger" n:href="delete!, id => $item->getId()">Smazat</a>
 					</span>
-					<span class="col-md-1" style="font-size: 15px; height: 46px">
+					<span class="col-md-1" style="font-size: 15px; height: 46px; top: 14px">
 						{if !$iterator->isFirst()}
 							<a n:href="moveUp!, id => $item->getId()">
 								<span class="glyphicon glyphicon-chevron-up"></span>
