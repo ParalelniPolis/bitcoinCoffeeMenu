@@ -87,6 +87,9 @@ class MenuManager extends Object
 	{
 		$item = $this->getItem($id);
 		$previous = $this->getItemWithOrder($item->getOrder() - 1);
+		if (!$previous) {
+			return;
+		}
 		$previous->setOrder($item->getOrder());
 		$item->setOrder($item->getOrder() - 1);
 		$this->entityManager->flush();
@@ -96,6 +99,9 @@ class MenuManager extends Object
 	{
 		$item = $this->getItem($id);
 		$next = $this->getItemWithOrder($item->getOrder() + 1);
+		if (!$next) {
+			return;
+		}
 		$next->setOrder($item->getOrder());
 		$item->setOrder($item->getOrder() + 1);
 		$this->entityManager->flush();
