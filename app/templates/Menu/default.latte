@@ -3,14 +3,14 @@
 		<div class="menu">
 			{foreach $menu as $item}
 				<div class="row">
-					<span class="col-md-4">
+					<span class="col-md-3" style="text-align: right">
+						{$item->getPriceCZ()|number:0:'.':''} CZ
+					</span>
+					<span class="col-md-4" style="text-align: center">
 						{$item->getName()}
 					</span>
-					<span class="col-md-4">
-						{$item->getPriceCZ()|number} CZK
-					</span>
-					<span class="col-md-4">
-						{$item->getPriceBitcoin()*1000|number:2} mBTC
+					<span class="col-md-5" style="text-align: left">
+						{$item->getPriceBitcoin()*1000|number:2:'.':''} mBTC
 					</span>
 				</div>
 			{/foreach}

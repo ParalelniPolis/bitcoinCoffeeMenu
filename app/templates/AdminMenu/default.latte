@@ -8,10 +8,10 @@
 						{$item->getName()}
 					</span>
 					<span class="col-md-2">
-						{$item->getPriceCZ()|number} CZK
+						{$item->getPriceCZ()|number:0:'.':' '} CZK
 					</span>
 					<span class="col-md-2">
-						{$item->getPriceBitcoin()*1000|number:2} mBTC
+						{$item->getPriceBitcoin()*1000|number:2:'.':' '} mBTC
 					</span>
 					<span class="col-md-1">
 						<a class="btn btn-info" n:href="edit!, id => $item->getId()">Editovat</a>
@@ -40,7 +40,7 @@
 							<input class="form-control" n:name="priceCZ"> CZK
 						</span>
 						<span class="col-md-3">
-							{$item->getPriceBitcoin()*1000|number:2} mBTC
+							{$item->getPriceBitcoin()*1000|number:2:'.':' '} mBTC
 						</span>
 						<span class="col-md-1">
 							<input class="btn btn-success" n:name="submit">
