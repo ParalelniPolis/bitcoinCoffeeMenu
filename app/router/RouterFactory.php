@@ -5,6 +5,7 @@ namespace App;
 use Nette;
 use Nette\Application\Routers\RouteList;
 use Nette\Application\Routers\Route;
+use Tracy\Debugger;
 
 
 class RouterFactory
@@ -21,6 +22,11 @@ class RouterFactory
 			'action' => 'default',
 			'id' => NULL
 		]);
+
+		if ($_SERVER['SERVER_NAME'] != 'localhost') {
+			Route::$defaultFlags = Route::SECURED;
+		}
+
 		return $router;
 	}
 
