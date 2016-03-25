@@ -16,17 +16,17 @@ class RouterFactory
 	 */
 	public static function createRouter()
 	{
+		if ($_SERVER['SERVER_NAME'] != 'localhost') {
+			Debugger::barDump('turning default secured flags on');
+			Route::$defaultFlags = Route::SECURED;
+		}
+
 		$router = new RouteList;
 		$router[] = new Route('<presenter>[/<action>[/<id>]]', [
 			'presenter' => 'Menu',
 			'action' => 'default',
 			'id' => NULL
 		]);
-
-		if ($_SERVER['SERVER_NAME'] != 'localhost') {
-			Debugger::barDump('turning default secured flags on');
-			Route::$defaultFlags = Route::SECURED;
-		}
 
 		return $router;
 	}
