@@ -23,7 +23,7 @@ class BitcoinPriceCalculator extends Object
 	{
 		$client = new Client([
 			'base_uri' => 'https://api.bitcoinaverage.com/',
-			'timeout'  => 2.0,
+			'timeout'  => 10.0,
 			'verify' => false
 		]);
 		$response = $client->request('GET', 'ticker/EUR/');
@@ -33,7 +33,7 @@ class BitcoinPriceCalculator extends Object
 
 		$client = new Client([
 			'base_uri' => 'https://www.cnb.cz/',
-			'timeout'  => 2.0,
+			'timeout'  => 10.0,
 			'verify' => false
 		]);
 		$response = $client->request('GET', 'cs/financni_trhy/devizovy_trh/kurzy_devizoveho_trhu/denni_kurz.txt');

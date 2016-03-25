@@ -24,7 +24,7 @@ class RouterFactory
 		]);
 
 		if ($_SERVER['SERVER_NAME'] != 'localhost') {
-			Debugger::barDump('turning default secured flasgs on');
+			Debugger::barDump('turning default secured flags on');
 			Route::$defaultFlags = Route::SECURED;
 		}
 
