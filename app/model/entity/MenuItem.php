@@ -41,7 +41,7 @@ class MenuItem extends Entities\BaseEntity
 	private $priceBitcoin;
 
 	/**
-	 * @ORM\Column(type="integer", name="`order`", unique=true, nullable=false)
+	 * @ORM\Column(type="integer", name="`order`", nullable=false)
 	 * @var int
 	 */
 	private $order;
