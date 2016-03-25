@@ -1,21 +1,16 @@
 {block content}
-	<style>
-		.menu {
-			font-size: 55px;
-		}
-	</style>
 
 	{snippet menu}
 		<div class="menu">
 			{foreach $menu as $item}
-				<div class="row">
-					<span class="col-md-3" style="text-align: right">
-						{$item->getPriceCZ()|number:0:'.':''} CZ
-					</span>
-					<span class="col-md-4" style="text-align: center">
+				<div class="row menu__item">
+					<span class="col-md-6 menu__item-name">
 						{$item->getName()}
 					</span>
-					<span class="col-md-5" style="text-align: left">
+					<span class="col-md-3 menu__item-cz">
+						{$item->getPriceCZ()|number:0:'.':''} CZK
+					</span>
+					<span class="col-md-3 menu__item-btc">
 						{$item->getPriceBitcoin()*1000|number:2:'.':''} mBTC
 					</span>
 				</div>

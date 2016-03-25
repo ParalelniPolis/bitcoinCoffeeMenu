@@ -11,32 +11,27 @@
 
 	{*dočasně, během vývoje, abych nemusel minifikovat css a kompilovat bootstrap*}
 	<link rel="stylesheet" href="{$basePath}/css/bootstrap.css">
+	<link rel="stylesheet" href="{$basePath}/css/main.css">
 	<meta name="viewport" content="width=device-width">
 	{block head}{/block}
 	{block scripts}
-		<script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+		<script src="https://code.jquery.com/jquery-1.12.2.min.js"></script>
 		<script src="https://nette.github.io/resources/js/netteForms.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 		<script src="{$basePath}/js/nette.ajax.js"></script>
 		<script src="{$basePath}/js/main.js"></script>
 	{/block}
-	<style>
-		*, body {
-			font-family: Helvetica, serif;
-			background-color: black;
-			color: white;
-			font-weight: bold;
-		}
-		.container {
-			margin-left: 0;
-			margin-right: 0;
-			width: 100%;
-		}
-	</style>
 </head>
 
 <body>
     <div class="container">
+
+		<div class="row">
+			<div class="text-center">
+				<img src="{$basePath}/img/logo.png" alt="" />
+			</div>
+		</div>
+
         <div class="row">
 			<div n:foreach="$flashes as $flash">
 				<div class="alert alert-dismissible alert-{$flash->type}">
@@ -47,6 +42,6 @@
     	</div>
 		{include content}
 
-
+	</div>
 </body>
 </html>

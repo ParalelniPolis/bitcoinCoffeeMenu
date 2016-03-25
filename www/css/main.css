@@ -1,0 +1,23 @@
+*, body {
+    padding: 10px 3px;
+    font-family: Helvetica, serif;
+    background-color: black;
+    color: white;
+    font-weight: bold;
+}
+.container {
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+}
+.menu__item {
+    line-height: 80px;
+}
+.menu__item-name {
+    font-size: 55px;
+}
+.menu__item-cz,
+.menu__item-btc {
+    font-size: 40px;
+    text-align: right;
+}
