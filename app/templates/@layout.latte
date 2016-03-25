@@ -11,9 +11,6 @@
 
 	{*dočasně, během vývoje, abych nemusel minifikovat css a kompilovat bootstrap*}
 	<link rel="stylesheet" href="{$basePath}/css/bootstrap.css">
-	<link rel="stylesheet" href="{$basePath}/css/layout.css">
-	<link rel="stylesheet" href="{$basePath}/css/fileinput.css">
-	<link rel="stylesheet" href="{$basePath}/css/admin.css">
 	<meta name="viewport" content="width=device-width">
 	{block head}{/block}
 	<style>
@@ -45,11 +42,11 @@
 
 
 	{block scripts}
-		<script rel="stylesheet" href="{$basePath}/js/nette.ajax.js"></script>
 		<script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
-		<script src="https://nette.github.io/resources/js/netteForms.min.js"></script>
-    	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-		<script rel="stylesheet" href="{$basePath}/js/main.js"></script>
+		{*<script src="https://nette.github.io/resources/js/netteForms.min.js"></script>*}
+		{*<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>*}
+		<script href="{$basePath}/js/main.js"></script>
+		{*<script href="{$basePath}/js/nette.ajax.js"></script>*}
 	{/block}
 </body>
 </html>

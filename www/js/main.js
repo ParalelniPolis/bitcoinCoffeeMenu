@@ -1,13 +1,23 @@
-$(function () {
-    $.nette.init();
+//$(function () {
+//    console.log('preparing to init');
+    //$.nette.init();
+    //
+    //console.log('preparing to reload');
+    //if(reload) {
+    //    console.log('reload');
+    //    setInterval(function() {
+    //        console.log('realoding');
+    //        $.nette.ajax({
+    //            'url': '?do=redraw',
+    //            'data': {
+    //            }
+    //        });
+    //    }, 5000)
+    //} else {
+    //    console.log('not reload');
+    //}
+//});
 
-    if(reload) {
-        setInterval(function() {
-            $.nette.ajax({
-                'url': '?do=redraw',
-                'data': {
-                }
-            });
-        }, 5000)
-    }
+$(function() {
+    console.log( "ready!" );
 });
